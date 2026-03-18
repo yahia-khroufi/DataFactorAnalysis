@@ -8,13 +8,6 @@ Ce projet de Master en Web Intelligence et Sciences des Données (WISD) à l'Uni
 
 L'objectif est de démontrer comment ces méthodes permettent de réduire la dimension des données, identifier des structures latentes et fournir des informations exploitables pour l'aide à la décision.
 
-## Auteur
-**Yahia Khroufi**  
-Master WISD – Faculté des Sciences Dhar El Mahraz – Université Sidi Mohamed Ben Abdellah, Fès
-
-## Encadrement
-**Pr. Abdelkamel Alj**
-
 ## Technologies utilisées
 - R (logiciel principal)
 - Librairie `FactoMineR` pour les analyses factorielles
