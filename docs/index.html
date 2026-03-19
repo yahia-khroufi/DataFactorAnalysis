@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet ACP / AFCM - Analyse de Données Multivariées</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Rapport Section -->
+        <section id="rapport" class="section rapport-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Rapport Analytique ACP/AFCM</h2>
+                    <p class="section-description">
+                        Consultez le rapport complet de notre analyse ACP/AFCM avec interprétations détaillées, 
+                        visualisations et conclusions.
+                    </p>
+                </div>
+
+                <div class="pdf-viewer-container">
+                    <iframe 
+                        src="RapportACP_AFCM.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+                        class="pdf-viewer"
+                        title="Rapport ACP / AFCM">
+                    </iframe>
+                    <p class="pdf-fallback">
+                        Si le PDF ne s'affiche pas, 
+                        <a href="RapportACP_AFCM.pdf" target="_blank">cliquez ici pour télécharger</a>.
+                    </p>
+                </div>
+
+                <div class="section-info">
+                    <div class="info-box">
+                        <h3>📋 À Propos du Rapport</h3>
+                        <p>
+                            Ce rapport présente une analyse statistique rigoureuse utilisant l'ACP 
+                            (Analyse en Composantes Principales) et l'AFCM (Analyse Factorielle des 
+                            Correspondances Multiples) pour explorer les corrélations et patterns 
+                            dans les données académiques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bibliographie Section -->
+        <section id="bibliographie" class="section bibliographie-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Bibliographie</h2>
+                    <p class="section-description">
+                        Références académiques, sources et littérature utilisées pour cette étude.
+                    </p>
+                </div>
+
+                <div class="pdf-viewer-container">
+                    <iframe 
+                        src="Bibliographie.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+                        class="pdf-viewer"
+                        title="Bibliographie">
+                    </iframe>
+                    <p class="pdf-fallback">
+                        Si le PDF ne s'affiche pas, 
+                        <a href="Bibliographie.pdf" target="_blank">cliquez ici pour télécharger</a>.
+                    </p>
+                </div>
+
+                <div class="section-info">
+                    <div class="info-box">
+                        <h3>📚 Sources et Références</h3>
+                        <p>
+                            Cette section compile toutes les sources académiques, articles scientifiques, 
+                            ouvrages de référence et publications ayant servi de base à notre analyse et 
+                            interprétations statistiques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Projet ACP / AFCM - Analyse de Données Multivariées. Tous droits réservés.</p>
+            <p class="footer-note">Réalisé avec ❤️ pour l'analyse statistique académique.</p>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active nav link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

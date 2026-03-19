@@ -1,0 +1,469 @@
+/* ===================================
+   Reset and Base Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+/* ===================================
+   Navigation Bar - Fixed & Sticky
+   =================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 70px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0052cc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #0052cc;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0052cc;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #0052cc;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ===================================
+   Main Content
+   =================================== */
+.main-content {
+    margin-top: 70px;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef1f6 100%);
+    padding: 80px 30px 60px;
+    text-align: center;
+    border-bottom: 1px solid #e8eef5;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #0052cc;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   Sections
+   =================================== */
+.section {
+    padding: 60px 30px;
+}
+
+.section:nth-child(odd) {
+    background: #ffffff;
+}
+
+.section:nth-child(even) {
+    background: #f9fbfc;
+}
+
+.section-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #0052cc;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ===================================
+   PDF Viewer Container
+   =================================== */
+.pdf-viewer-container {
+    position: relative;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    animation: slideUp 0.6s ease-out;
+}
+
+.pdf-viewer-container:hover {
+    box-shadow: 0 8px 24px rgba(0, 82, 204, 0.12);
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 1100px;
+    border: none;
+    display: block;
+    background: white;
+}
+
+.pdf-fallback {
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    background: #f9fbfc;
+    border-top: 1px solid #e0e0e0;
+}
+
+.pdf-fallback a {
+    color: #0052cc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pdf-fallback a:hover {
+    color: #0041a3;
+    text-decoration: underline;
+}
+
+/* ===================================
+   Section Info Box
+   =================================== */
+.section-info {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-box {
+    background: #f0f4ff;
+    border-left: 4px solid #0052cc;
+    padding: 25px 30px;
+    border-radius: 6px;
+    max-width: 500px;
+    box-shadow: 0 2px 8px rgba(0, 82, 204, 0.1);
+}
+
+.info-box h3 {
+    color: #0052cc;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.info-box p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    border-top: 1px solid #234;
+}
+
+.footer-container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.footer-container p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.footer-note {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   Responsive Design - Tablet
+   =================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-menu {
+        gap: 25px;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 60px 20px 40px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 40px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .pdf-viewer {
+        height: 850px;
+    }
+
+    .info-box {
+        max-width: 100%;
+    }
+}
+
+/* ===================================
+   Responsive Design - Mobile
+   =================================== */
+@media (max-width: 480px) {
+    .navbar {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+        gap: 8px;
+    }
+
+    .logo-icon {
+        font-size: 1.4rem;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .main-content {
+        margin-top: 60px;
+    }
+
+    .hero {
+        padding: 40px 15px 30px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .pdf-viewer {
+        height: 700px;
+    }
+
+    .pdf-viewer-container {
+        margin-bottom: 30px;
+    }
+
+    .info-box {
+        padding: 20px 25px;
+    }
+
+    .info-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .info-box p {
+        font-size: 0.9rem;
+    }
+
+    .footer-container p {
+        font-size: 0.85rem;
+    }
+}
