@@ -48,6 +48,17 @@
                     </ul>
                 </div>
 
+                <!-- PDF Controls -->
+                <div class="pdf-controls">
+                    <button class="pdf-btn" onclick="previousRapportPage()" title="Previous Page">⬅️ Previous</button>
+                    <div class="page-info">
+                        <input type="number" id="rapportPageInput" class="page-input" value="1" min="1">
+                        <span class="page-counter">/ pages</span>
+                    </div>
+                    <button class="pdf-btn" onclick="nextRapportPage()" title="Next Page">Next ➡️</button>
+                    <a href="RapportACP_AFCM.pdf" download class="pdf-btn download-btn" title="Download PDF">📥 Download</a>
+                </div>
+
                 <div class="pdf-viewer-container">
                     <iframe 
                         id="rapportFrame"
@@ -56,8 +67,8 @@
                         title="PCA / MCA Report">
                     </iframe>
                     <p class="pdf-fallback">
-                        If the PDF does not display, 
-                        <a href="RapportACP_AFCM.pdf" target="_blank">click here to download</a>.
+                        If the PDF does not display,<br>
+                        <a href="RapportACP_AFCM.pdf" download>📥 Click here to download</a>
                     </p>
                 </div>
             </div>
@@ -73,6 +84,16 @@
                     </p>
                 </div>
 
+                <!-- PDF Controls -->
+                <div class="pdf-controls">
+                    <button class="pdf-btn" onclick="previousBibliographiePage()" title="Previous Page">⬅️ Previous</button>
+                    <div class="page-info">
+                        <input type="number" id="bibliographiePageInput" class="page-input" value="1" min="1">
+                        <span class="page-counter">/ pages</span>
+                    </div>
+                    <button class="pdf-btn" onclick="nextBibliographiePage()" title="Next Page">Next ➡️</button>
+                    <a href="Bibliographie.pdf" download class="pdf-btn download-btn" title="Download PDF">📥 Download</a>
+                </div>
 
                 <div class="pdf-viewer-container">
                     <iframe 
@@ -82,8 +103,8 @@
                         title="Bibliography">
                     </iframe>
                     <p class="pdf-fallback">
-                        If the PDF does not display, 
-                        <a href="Bibliographie.pdf" target="_blank">click here to download</a>.
+                        If the PDF does not display,<br>
+                        <a href="Bibliographie.pdf" download>📥 Click here to download</a>
                     </p>
                 </div>
             </div>

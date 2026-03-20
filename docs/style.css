@@ -590,9 +590,19 @@ body {
 
     .pdf-viewer-container {
         aspect-ratio: 8.5 / 11;
-        min-height: 350px;
+        min-height: 400px;
         max-height: 600px;
         margin-bottom: 30px;
+    }
+
+    .pdf-viewer {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .pdf-fallback {
+        display: none;
     }
 
     .info-box {
@@ -641,11 +651,23 @@ body {
         width: 100%;
         min-width: unset;
         padding: 12px 10px;
+        font-size: 0.9rem;
     }
 
     .page-info {
         width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .page-input {
+        width: 50px;
+        padding: 8px 8px;
+        font-size: 0.85rem;
+    }
+
+    .page-counter {
+        font-size: 0.9rem;
     }
 
     .page-input {
