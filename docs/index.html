@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet ACP / AFCM - Analyse de Données Multivariées</title>
+    <title>PCA / MCA Project - Multivariate Data Analysis</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
                 <span class="logo-text">ACP/AFCM</span>
             </a>
             <ul class="nav-menu">
-                <li><a href="#rapport" class="nav-link active">Rapport</a></li>
-                <li><a href="#bibliographie" class="nav-link">Bibliographie</a></li>
+                <li><a href="#rapport" class="nav-link active">Report</a></li>
+                <li><a href="#bibliographie" class="nav-link">Bibliography</a></li>
             </ul>
         </div>
     </nav>
@@ -28,24 +28,37 @@
         <section id="rapport" class="section rapport-section">
             <div class="section-container">
                 <div class="section-header">
-                    <h2>Rapport Analytique ACP/AFCM</h2>
+                    <h2>Analytical Report PCA/MCA</h2>
                     <p class="section-description">
-                        Consultez le rapport complet de notre analyse ACP/AFCM avec interprétations détaillées, 
-                        visualisations et conclusions.
+                        Consult the complete report of our PCA/MCA analysis with detailed interpretations, 
+                        visualizations, and conclusions.
                     </p>
                 </div>
 
                 <!-- Table of Contents -->
                 <div class="table-of-contents">
-                    <h3>📑 Table des Matières</h3>
+                    <h3>📑 Table of Contents</h3>
                     <ul class="toc-list">
                         <li><a href="#" onclick="goToRapportPage(1)">1. Introduction</a></li>
-                        <li><a href="#" onclick="goToRapportPage(3)">2. Méthodologie</a></li>
-                        <li><a href="#" onclick="goToRapportPage(5)">3. Résultats ACP</a></li>
-                        <li><a href="#" onclick="goToRapportPage(8)">4. Résultats AFCM</a></li>
-                        <li><a href="#" onclick="goToRapportPage(11)">5. Interprétations</a></li>
+                        <li><a href="#" onclick="goToRapportPage(3)">2. Methodology</a></li>
+                        <li><a href="#" onclick="goToRapportPage(5)">3. PCA Results</a></li>
+                        <li><a href="#" onclick="goToRapportPage(8)">4. MCA Results</a></li>
+                        <li><a href="#" onclick="goToRapportPage(11)">5. Interpretations</a></li>
                         <li><a href="#" onclick="goToRapportPage(14)">6. Conclusions</a></li>
                     </ul>
+                </div>
+
+                <!-- PDF Controls -->
+                <div class="pdf-controls">
+                    <button class="pdf-btn" onclick="goToRapportPage(1)" title="First page">⏮️</button>
+                    <button class="pdf-btn" onclick="previousRapportPage()" title="Previous page">◀️</button>
+                    <div class="page-info">
+                        <input type="number" id="rapportPageInput" min="1" class="page-input" placeholder="Go to page...">
+                        <span class="page-counter">/ <span id="rapportTotalPages">?</span></span>
+                    </div>
+                    <button class="pdf-btn" onclick="nextRapportPage()" title="Next page">▶️</button>
+                    <button class="pdf-btn" onclick="goToRapportPage(999)" title="Last page">⏭️</button>
+                    <a class="pdf-btn download-btn" href="RapportACP_AFCM.pdf" download title="Download">⬇️</a>
                 </div>
 
                 <div class="pdf-viewer-container">
@@ -53,22 +66,21 @@
                         id="rapportFrame"
                         src="RapportACP_AFCM.pdf#toolbar=1&navpanes=0&scrollbar=1" 
                         class="pdf-viewer"
-                        title="Rapport ACP / AFCM">
+                        title="PCA / MCA Report">
                     </iframe>
                     <p class="pdf-fallback">
-                        Si le PDF ne s'affiche pas, 
-                        <a href="RapportACP_AFCM.pdf" target="_blank">cliquez ici pour télécharger</a>.
+                        If the PDF does not display, 
+                        <a href="RapportACP_AFCM.pdf" target="_blank">click here to download</a>.
                     </p>
                 </div>
 
                 <div class="section-info">
                     <div class="info-box">
-                        <h3>📋 À Propos du Rapport</h3>
+                        <h3>📋 About the Report</h3>
                         <p>
-                            Ce rapport présente une analyse statistique rigoureuse utilisant l'ACP 
-                            (Analyse en Composantes Principales) et l'AFCM (Analyse Factorielle des 
-                            Correspondances Multiples) pour explorer les corrélations et patterns 
-                            dans les données académiques.
+                            This report presents a rigorous statistical analysis using PCA 
+                            (Principal Component Analysis) and MCA (Multiple Correspondence Analysis) 
+                            to explore correlations and patterns in academic data.
                         </p>
                     </div>
                 </div>
@@ -79,33 +91,45 @@
         <section id="bibliographie" class="section bibliographie-section">
             <div class="section-container">
                 <div class="section-header">
-                    <h2>Bibliographie</h2>
+                    <h2>Bibliography</h2>
                     <p class="section-description">
-                        Références académiques, sources et littérature utilisées pour cette étude.
+                        Academic references, sources, and literature used for this study.
                     </p>
                 </div>
-      
+
+                <!-- PDF Controls -->
+                <div class="pdf-controls">
+                    <button class="pdf-btn" onclick="goToBibliographiePage(1)" title="First page">⏮️</button>
+                    <button class="pdf-btn" onclick="previousBibliographiePage()" title="Previous page">◀️</button>
+                    <div class="page-info">
+                        <input type="number" id="bibliographiePageInput" min="1" class="page-input" placeholder="Go to page...">
+                        <span class="page-counter">/ <span id="bibliographieTotalPages">?</span></span>
+                    </div>
+                    <button class="pdf-btn" onclick="nextBibliographiePage()" title="Next page">▶️</button>
+                    <button class="pdf-btn" onclick="goToBibliographiePage(999)" title="Last page">⏭️</button>
+                    <a class="pdf-btn download-btn" href="Bibliographie.pdf" download title="Download">⬇️</a>
+                </div>
 
                 <div class="pdf-viewer-container">
                     <iframe 
                         id="bibliographieFrame"
                         src="Bibliographie.pdf#toolbar=1&navpanes=0&scrollbar=1" 
                         class="pdf-viewer"
-                        title="Bibliographie">
+                        title="Bibliography">
                     </iframe>
                     <p class="pdf-fallback">
-                        Si le PDF ne s'affiche pas, 
-                        <a href="Bibliographie.pdf" target="_blank">cliquez ici pour télécharger</a>.
+                        If the PDF does not display, 
+                        <a href="Bibliographie.pdf" target="_blank">click here to download</a>.
                     </p>
                 </div>
 
                 <div class="section-info">
                     <div class="info-box">
-                        <h3>📚 Sources et Références</h3>
+                        <h3>📚 Sources and References</h3>
                         <p>
-                            Cette section compile toutes les sources académiques, articles scientifiques, 
-                            ouvrages de référence et publications ayant servi de base à notre analyse et 
-                            interprétations statistiques.
+                            This section compiles all academic sources, scientific articles, 
+                            reference works, and publications that served as the foundation for our analysis 
+                            and statistical interpretations.
                         </p>
                     </div>
                 </div>
@@ -116,15 +140,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2024 Projet ACP / AFCM - Analyse de Données Multivariées. Tous droits réservés.</p>
-            <p class="footer-note">Réalisé avec ❤️ pour l'analyse statistique académique.</p>
+            <p>&copy; 2024 PCA / MCA Project - Multivariate Data Analysis. All rights reserved.</p>
+            <p class="footer-note">Created with ❤️ for academic statistical analysis.</p>
         </div>
     </footer>
 
     <!-- Smooth Scroll Script -->
     <script>
         // ============================================
-        // PDF Navigation - Rapport
+        // PDF Navigation - Report
         // ============================================
         function goToRapportPage(pageNum) {
             const frame = document.getElementById('rapportFrame');
@@ -150,7 +174,7 @@
         }
 
         // ============================================
-        // PDF Navigation - Bibliographie
+        // PDF Navigation - Bibliography
         // ============================================
         function goToBibliographiePage(pageNum) {
             const frame = document.getElementById('bibliographieFrame');
